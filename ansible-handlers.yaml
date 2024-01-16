@@ -1,0 +1,31 @@
+---
+- name: Test handlers
+  hosts: localhost
+  tasks:
+
+  - name: Ammend file
+    lineinfile:
+      state: present
+      dest: ./testfile.txt
+      line: "#Test line"
+    register: output
+    notify: debug2
+
+  - name: Ammend file2
+    lineinfile:
+      state: present
+      dest: ./testfile.txt
+      line: "#Test line2"
+    register: output2
+
+  - name: debug
+    debug:
+      msg: "Test 1"
+    when: output.changed or output2.changed
+    
+  handlers:
+  - name: debug2
+    debug:
+      msg: "Test 2"
+
+    
