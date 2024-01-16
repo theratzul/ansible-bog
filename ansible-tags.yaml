@@ -1,0 +1,23 @@
+---
+- name: set facts simple
+  hosts: localhost
+  tasks:
+    - set_fact:
+        one: hello
+        two: hello2
+        three: hello3
+
+    - name: one
+      tags: one
+      debug: 
+        msg: "{{ one }}"
+
+    - name: two
+      tags: one
+      debug: 
+        msg: "{{ two }}"
+
+    - name: three
+      tags: two
+      debug: 
+        msg: "{{ three }}"                      
