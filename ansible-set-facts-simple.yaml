@@ -1,0 +1,10 @@
+---
+- name: set facts simple
+  hosts: localhost
+  tasks:
+    - set_fact:
+        one: hello
+
+    - name: one
+      debug: 
+        msg: "{{ one }}"
