@@ -1,0 +1,11 @@
+---
+- name: copy
+  hosts: localhost
+  become: false
+  tasks:
+    - name: copy report.txt
+      ansible.builtin.copy:
+        src: text.txt
+        dest: /home/bogdan/test.txt
+        owner: bogdan
+        mode: '0644'

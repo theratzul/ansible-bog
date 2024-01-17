@@ -3,3 +3,4 @@
 # ansible-playbook -i localhost ansible-set-facts-simple.yaml
 # ansible-playbook --tags one ansible-tags.yaml
 # ansible-playbook ansible-handlers.yaml
+# ansible-playbook anslible-local-copy.yaml -i localhost
