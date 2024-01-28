@@ -1,0 +1,15 @@
+- name: line in file
+  hosts: localhost
+  # become: bogdan
+  tasks:
+  - name: add
+    lineinfile:
+      path: /home/bogdan/ansible-bog/lineinfile.txt
+      # Search the string 
+      regexp:  '{^daemon_directory .*}'
+      # Commentout first the line
+      line: '# \1'
+      backrefs: yes
+      state: present
+      backup: yes
+      # delegate_to: 127.0.0.1
