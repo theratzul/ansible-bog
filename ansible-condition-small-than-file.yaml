@@ -1,0 +1,15 @@
+---
+- name: set facts simple
+  hosts: localhost
+  tasks:
+    - set_fact:
+        one: hello
+
+    - name: one
+      debug: 
+        msg: "{{ one }}"
+
+    - name: Run items grater than
+      ansible.builtin.command: echo {{ item }}
+      loop: [ 0, 2, 4, 6, 8, 10 ]
+      when: item > 5
