@@ -7,3 +7,6 @@
     - name: debug
       ansible.builtin.debug:
         var: fruit
+    - name: debug msg
+      ansible.builtin.debug:
+        msg: "our fruit is {{ fruit }}"
