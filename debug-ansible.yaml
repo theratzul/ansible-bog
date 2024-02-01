@@ -1,0 +1,9 @@
+---
+- name: debug module
+  hosts: localhost
+  vars:
+    fruit: "apple"
+  tasks:
+    - name: debug
+      ansible.builtin.debug:
+        var: fruit
