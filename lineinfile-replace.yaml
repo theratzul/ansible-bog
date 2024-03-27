@@ -1,0 +1,17 @@
+---
+- name: line and replace
+  hosts: localhost
+  tasks:
+  - name: add line in file
+    lineinfile:
+      path: /home/bogdan/ansible-bog/lineinfile.txt     
+      regexp:  '^daemon_directory'
+      line: '# daemon_directory '
+      backrefs: yes
+      state: present
+      backup: yes
+  - name: Comment present
+    replace:
+      dest: /home/bogdan/ansible-bog/lineinfile.txt 
+      regexp: '^html_directory'
+      replace: '#html_directory'

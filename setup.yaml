@@ -1,0 +1,15 @@
+---
+- name: setup
+  hosts: localhost
+  gather_facts: true
+  tasks:
+    - name: Ensure no tab
+      become: true
+      lineinfile:
+        state: present
+        path: /etc/inputrc
+        line: set bell-style none
+        regexp: '^set bell-style .*'
+        insertafter: '
+        when:
+

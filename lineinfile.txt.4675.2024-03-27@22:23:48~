@@ -1,2 +1,2 @@
 #html_directory = no
-# daemon_directory 
+daemon_directory = no
